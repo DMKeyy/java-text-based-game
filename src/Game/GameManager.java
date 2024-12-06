@@ -94,7 +94,7 @@ public class GameManager {
                 return new Voleur(name, niveau,140,20,6,2,2);
             default:
             System.out.println("Choix invalide, Guerrier sélectionné par défaut.");
-                return new Guerrier(name, niveau,120,15,10,2,2);
+                return new Guerrier(name, niveau,175,15,10,2,2);
         }
     }
 
@@ -108,27 +108,28 @@ public class GameManager {
     }
 
     public  Personnage selectadversaire (int niveauJoueur) {
-        int x=rand.nextInt(3)+1;
+        int x=rand.nextInt(4)+1;
         int niveauAI;
-        if (niveauJoueur==1) {
-            niveauAI=1;
+        //generer le niveau de ladversaire dans un interval [niveaujoueur-2 ; niveaujoueur+2]
+        if (niveauJoueur<=2 || niveauJoueur==100) {
+            niveauAI=niveauJoueur;
         } else {
             niveauAI=niveauJoueur+x-2;
         }
     switch (x) {
         case 1:
-            return new Guerrier("Thor", niveauAI,120,15,10,2,2);
+            return new Guerrier("Thor", niveauAI,175,15,10,2,2);
         case 2:
-            return new Mage("Floki", niveauAI,100,18,8,2,2);
+            return new Mage("Floki", niveauAI,160,18,8,2,2);
         case 3:
-            return new Voleur("Loki", niveauAI,80,20,6,2,2);
+            return new Voleur("Loki", niveauAI,140,20,6,2,2);
         default:
-            return new Guerrier("Thor", niveauAI,120,15,10,2,2);
+            return new Guerrier("Thor", niveauAI,175,15,10,2,2);
     }
 }
 
     public void Adversaireselectioncomp (int niveau,Personnage adversaire){
-        for (int index = 1; index <= niveau/4; index++) {
+        for (int index = 1; index <= niveau/5; index++) {
             adversaire.AIameliorercompetance();
         }
     }
