@@ -222,7 +222,7 @@ abstract class Personnage implements Attaquable {
         System.out.println("1. Augmenter les points de vie max (+20)");
         System.out.println("2. Augmenter les dégâts d'attaque (+1)");
         System.out.println("3. Augmenter la défense (+2)");
-        System.out.print("Choisissez une compétence à améliorer : (1-3)");
+        System.out.println("Choisissez une compétence à améliorer : (1-3)");
 		int choix;
 		do {
             while (true) {
