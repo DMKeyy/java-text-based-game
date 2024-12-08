@@ -20,8 +20,8 @@ public class mapElectric implements map{
 
         if (x<=0.2) {
             r=player.getPointsDeVie()/10+ rand.nextInt(20)+1;
-            player.pointsDeVie-=r;
-            System.out.println(player.getNom()+" a subi "+ r +" degats causés par une decharge electric .");
+            player.setPointsDeVie(player.getPointsDeVie()-r);
+            System.out.println(player.getNom()+" a subi "+ r +" degats causés par une decharge electrique .");
             player.afficherHP();
         }
     }

@@ -106,7 +106,7 @@ public class Combat {
         }
 
     public void afficherAction () {
-        System.out.println("Choisissez une action :");
+        System.out.println("Choisissez une action :(1-3)");
             System.out.println("1. Attaquer ");
             System.out.println("2. Defendre");
             System.out.println("3. Utiliser une potion de soin");
@@ -122,7 +122,7 @@ public class Combat {
                     action = scanner.nextInt();
                     break;
                 } else {
-                    System.out.println("input invlide . Entree un entier.");
+                    System.out.println("input invlide . Entrez un entier.");
                     scanner.next(); // Clear invalid input
                 }
             }
@@ -146,7 +146,7 @@ public class Combat {
     }
 
     public void selectionAttaque (Personnage joueur,Personnage adversaire,boolean defenceA) {
-        System.out.println("Choisissez une attaque :");
+        System.out.println("Choisissez une attaque :(1-2)");
         System.out.println("1. Attaquer un adversaire");
         System.out.println("2. Utiliser compétence spéciale");
         int choix;
@@ -158,7 +158,7 @@ public class Combat {
                     choix = scanner.nextInt();
                     break;
                 } else {
-                    System.out.println("input invlide . Entree un entier.");
+                    System.out.println("input invalide . Entrez un entier.");
                     scanner.next(); // Clear invalid input
                 }
             }
@@ -224,7 +224,7 @@ public class Combat {
     }
 
     public map choisirMap (){
-        System.out.println("Choisissez la Map :");
+        System.out.println("Choisissez la Map :(1-3)");
         System.out.println("1. Map par default.");
         System.out.println("2. Electric Nexus.");
         System.out.println("3. Chaos Pendulum. ");
@@ -235,7 +235,7 @@ public class Combat {
                     choix = scanner.nextInt();
                     break;
                 } else {
-                    System.out.println("input invlide . Entree un entier.");
+                    System.out.println("input invalide . Entrez un entier.");
                     scanner.next();
                 }
             }
@@ -244,16 +244,16 @@ public class Combat {
         switch (choix) {
             case 1: return new mapDefaut();
             case 2: 
-            System.out.println("La Nexus Électrique est une arène où les joueurs peuvent être frappés par des\n"+
+            System.out.println("Le Nexus Électrique est une arène où les joueurs peuvent être frappés par des\n"+
                                 "décharges électriques aléatoires. Ces arcs électriques infligent des dégâts à\n"+
                                 "ceux qui sont touchés,ajoutant un élément de risque constant à la bataille. \n"+
                                 "Le terrain est marqué par des générateurs énergétiques, et l'environnement \n"+
                                 "instable augmente l'imprévisibilité de chaque combat.\n\n");
             return new mapElectric();
             case 3: 
-            System.out.println("Le Pendule du Chaos est une arène où la réalité elle-même oscille entre ordre et désordre.\n"+
-                                " Inspiré par le mouvement imprévisible d’un pendule gigantesque, cet endroit est marqué par\n"+
-                                " des perturbations constantes qui mettent à l'épreuve l'endurance et l'adaptabilité des \n"+
+            System.out.println("La Pendule du Chaos est une arène où la réalité elle-même oscille entre ordre et désordre.\n"+
+                                "Inspiré par le mouvement imprévisible d'une pendule gigantesque, cet endroit est marqué par\n"+
+                                "des perturbations constantes qui mettent à l'épreuve l'endurance et l'adaptabilité des \n"+
                                 "combattants. Chaque round les degats des champions changent aleatoirement.");
             return new mapChaos();
             default: return new mapDefaut();

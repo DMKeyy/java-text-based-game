@@ -59,13 +59,13 @@ public class GameManager {
                     choix = scanner.nextInt();
                     break;
                 } else {
-                    System.out.println("input invlide . Entree un entier.");
+                    System.out.println("input invlide . Entrez un entier.");
                     scanner.next(); // Clear invalid input
                 }
             }
         } while (choix < 1 || choix > 3);
     
-        System.out.println("Selectionnez Votre niveau :");
+        System.out.println("Selectionnez Votre niveau :(1-99)");
         int niveau;
         do {
             while (true) {
@@ -73,14 +73,14 @@ public class GameManager {
                     niveau = scanner.nextInt();
                     break;
                 } else {
-                    System.out.println("input invlide . Entree un entier.");
+                    System.out.println("input invlide . Entrez un entier.");
                     scanner.next(); // Clear invalid input
                 }
             }
         } while (niveau < 1 || niveau>=100);
         scanner.nextLine();
         String name;
-        System.out.println("Donner un nom a votre Champion :(1-20)");
+        System.out.println("Donnez un nom à votre Champion :(1-20)");
         do {
             name=scanner.nextLine();
         } while (name.length() < 1 || name.length()>20);
@@ -100,7 +100,7 @@ public class GameManager {
 
     public void SelectionCompetences(int niveau,Personnage joueur){
         if (niveau>4) {
-            System.out.println("Vous avez "+ niveau/5+ " point de competances veuillez les utiliser :");
+            System.out.println("Vous avez "+ niveau/5+ " point de competances, veuillez les utiliser :");
             for (int index = 1; index <= niveau/5; index++) {
                 joueur.AmeliorerCompetences();
             }
@@ -110,7 +110,7 @@ public class GameManager {
     public  Personnage selectadversaire (int niveauJoueur) {
         int x=rand.nextInt(4)+1;
         int niveauAI;
-        //generer le niveau de ladversaire dans un interval [niveaujoueur-2 ; niveaujoueur+2]
+        //generer le niveau de l'adversaire dans un interval [niveaujoueur-2 ; niveaujoueur+2]
         if (niveauJoueur<=2 || niveauJoueur==100) {
             niveauAI=niveauJoueur;
         } else {
