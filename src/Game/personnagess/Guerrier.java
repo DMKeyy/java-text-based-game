@@ -1,6 +1,6 @@
-package Game;
+package Game.personnagess;
 
-class Guerrier extends Personnage {
+public class Guerrier extends Personnage {
     public Guerrier(String nom,int niveau,int PVdepart,double DGdepart,int DFdepart,int NCdepart,int PTdepart) {
         super(nom,niveau,PVdepart+18*niveau,DGdepart+2*niveau,DFdepart+2*niveau,NCdepart+niveau/30, PTdepart+niveau/20);
     }

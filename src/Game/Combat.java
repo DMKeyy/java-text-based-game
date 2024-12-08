@@ -3,6 +3,12 @@ package Game;
 import java.util.Random;
 import java.util.Scanner;
 
+import Game.maps.map;
+import Game.maps.mapChaos;
+import Game.maps.mapDefaut;
+import Game.maps.mapElectric;
+import Game.personnagess.Personnage;
+
 public class Combat {
     static Random rand = new Random();
     static Scanner scanner = new Scanner(System.in);
@@ -35,10 +41,13 @@ public class Combat {
 
             // Le joueur choisit une arène, chaque map possède des effets uniques
             map MAP=choisirMap();
-
+            Thread.sleep(400);
             // Initialisation des états de défense pour le début du combat
             defenceJ=false;
             defenceA=false;
+
+            System.out.println("\n\nLe combat commence: \n\n");
+            Thread.sleep(1000);
 
              // Boucle principale du combat : continue tant que les deux personnages sont vivants
             while (joueur.estVivant() && adversaire.estVivant()) {
@@ -64,6 +73,7 @@ public class Combat {
                 selectionAction();
                 
                 AfficherToutHP (joueur,adversaire);
+                Thread.sleep(1500);
     
                 // Réinitialisation de la défense de l'adversaire pour son tour
                 defenceA=false;
@@ -90,7 +100,7 @@ public class Combat {
                     }
 
                     AfficherToutHP (joueur,adversaire);
-                    Thread.sleep(1000);// Pause pour simuler un délai entre les tours
+                    Thread.sleep(1500);// Pause pour simuler un délai entre les tours
                 }
                 else {
                      // Si l'adversaire est vaincu, annonce la victoire et met à jour les statistiques du joueur
@@ -133,7 +143,7 @@ public class Combat {
                 break;
             case 2:
             defenceJ=true;
-            System.out.println(joueur.nom + " a choisi de se défendre !");
+            System.out.println(joueur.getNom() + " a choisi de se défendre !");
             this.NbDefence++;
                 break;
             case 3:
@@ -187,7 +197,7 @@ public class Combat {
             break;
         case 2:
         defenceA=true;
-        System.out.println(adversaire.nom + " a choisi de se défendre !");
+        System.out.println(adversaire.getNom() + " a choisi de se défendre !");
             break;
         case 3:
         adversaire.utiliserPotion();

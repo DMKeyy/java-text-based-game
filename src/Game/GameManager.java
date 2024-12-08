@@ -1,6 +1,12 @@
 package Game;
 
 import java.util.Scanner;
+
+import Game.personnagess.Guerrier;
+import Game.personnagess.Mage;
+import Game.personnagess.Personnage;
+import Game.personnagess.Voleur;
+
 import java.util.Random;
 
 public class GameManager {
@@ -11,7 +17,7 @@ public class GameManager {
         Personnage joueur = selectJoueur();
 
         // Sélection et amélioration des compétences du joueur si son niveau est supérieur à 4
-        SelectionCompetences(joueur.niveau,joueur);
+        SelectionCompetences(joueur.getNiveau(),joueur);
         joueur.afficherStats();
 
         char playAgain;
@@ -24,7 +30,7 @@ public class GameManager {
             }
 
 
-            Personnage adversaire = selectadversaire(joueur.niveau);
+            Personnage adversaire = selectadversaire(joueur.getNiveau());
             Adversaireselectioncomp (adversaire.getNiveau(),adversaire);
 
             // Display stats

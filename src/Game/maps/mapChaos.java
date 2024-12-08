@@ -1,6 +1,8 @@
-package Game;
+package Game.maps;
 
 import java.util.Random;
+
+import Game.personnagess.Personnage;
 
 public class mapChaos implements map{
     static Random rand = new Random();

@@ -1,4 +1,4 @@
-package Game;
+package Game.personnagess;
 
 public interface Attaquable {
 	void attaquer(Personnage cible,boolean defenceActive);

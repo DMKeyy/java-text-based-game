@@ -1,6 +1,8 @@
-package Game;
+package Game.maps;
 
 import java.util.Random;
+
+import Game.personnagess.Personnage;
 
 public class mapElectric implements map{
     Random rand = new Random();

@@ -1,7 +1,7 @@
-package Game;
+package Game.personnagess;
 import java.util.Scanner;
 import java.util.Random;
-abstract class Personnage implements Attaquable {
+public abstract class Personnage implements Attaquable {
 	protected String nom;
 
 	protected int maxpointsDeVie,pointsDeVie;
